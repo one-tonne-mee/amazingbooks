@@ -1,6 +1,6 @@
 import React from 'react'
+import BookCard from '../../components/BookCard/BookCard'
 import { connect } from 'react-redux'
-import BookCard from '../components/BookCard/BookCard'
 import './Books.css'
 const mapStateToProps = state => {
   return { books: state.books}
