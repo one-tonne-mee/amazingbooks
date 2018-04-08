@@ -4,8 +4,20 @@
   margin: 10px 0 0 10px;
   padding: 10px;
   background-color: #EEEEEE;
+  align-items: flex-start;
 }
 .Category {
   flex: 1;
   padding-top: 5px;
+}
+
+@media screen and (max-width: 48rem) {
+  .Vertical {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+  }
+  .Category {
+    flex: 1;
+  }
 }

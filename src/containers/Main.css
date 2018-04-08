@@ -10,3 +10,10 @@
 .Books {
   flex: 4;
 }
+
+@media screen and (max-width: 48rem) {
+  .App-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
