@@ -3,8 +3,10 @@ import { findItemIndexByKey, removeItemByIndex, setProperties } from '../reducer
 export default (state = [], action) => {
   let actionableIndex
   switch(action.type) {
+    case 'SET_BOOKS':
+      return action.value
     case 'ADD':
-      return [...state, action.value]    
+      return [...state, action.value]
     case 'REMOVE':
       actionableIndex = findItemIndexByKey(state, action.value.key)
       return removeItemByIndex(state, actionableIndex)
@@ -22,7 +24,7 @@ export default (state = [], action) => {
       return setProperties(state, actionableIndex, 'isWishList', false)
     case 'FLUSH':
       return []
-    // other possible cases: flush wishlist, flush favoritelist  
+    // other possible cases: flush wishlist, flush favoritelist
     default:
       return []
   }

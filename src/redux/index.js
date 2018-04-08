@@ -6,5 +6,6 @@ const app = combineReducers({
 })
 
 export default createStore(
-  app
+  app,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )

@@ -2,16 +2,38 @@ import React, { Component } from 'react';
 import VerticalSidebar from './VerticalSidebar/VerticalSidebar'
 import Books from './Books/Books'
 import './Main.css'
+import bookService from '../services/bookService'
+import { connect } from 'react-redux'
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onGetBooks: async function(books) {
+      dispatch({
+        type: 'SET_BOOKS',
+        value: books
+      })
+    }
+  }
+}
 
 class Main extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      viewFilter: {
-        filterType: 'exist'
-      }
+      // viewFilter: {
+      //   filterType: 'boolean',
+      //   filterKey: 'isFavorite',
+      //   filterValue: true
+      // }
+      viewFilter: { filterType : 'exist'}
     }
   }
+
+  async componentDidMount() {
+    const booksArray = await bookService.getBooks()
+    await this.props.onGetBooks(booksArray)
+  }
+
   render() {
     return (
       <div className="App">
@@ -28,4 +50,4 @@ class Main extends Component {
   }
 }
 
-export default Main
+export default connect(null, mapDispatchToProps )(Main)

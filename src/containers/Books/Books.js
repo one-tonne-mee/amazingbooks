@@ -38,7 +38,7 @@ const Books = ({books , viewFilter }) => {
           }
         })
         .map( book => {
-          <BookCard book={book}/>
+          return (<BookCard key={book.key} book={book}/>)
         })
       }
     </div>
