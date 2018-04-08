@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import VerticalSidebar from './VerticalSidebar/VerticalSidebar'
 import Books from './Books/Books'
+import DisplayOptions from './DisplayOptions/DisplayOptions'
 import './Main.css'
 import bookService from '../services/bookService'
 import { connect } from 'react-redux'
@@ -43,7 +44,8 @@ class Main extends Component {
         <div className="App-wrapper">
           <VerticalSidebar className="Sidebar" />
           <div className="Main">
-            <Books viewFilter={this.state.viewFilter} />
+            <DisplayOptions />
+            <Books className="Books" viewFilter={this.state.viewFilter} />
           </div>
         </div>
 

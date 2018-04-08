@@ -1,0 +1,55 @@
+.Display-Options {
+  width: 98%;
+  background: #EEEEEE;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 5px;
+  color: black;
+  font-size: 0.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 48rem) {
+  .DisplayOptions {
+    flex-direction: column;
+    width: 90%;
+  }
+  .PushLeft {
+    min-width: 40vw;
+    max-width: 25vw;
+  }
+}
+
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.PushLeft {
+  max-width: 35vw;
+  min-width: 30vw;
+}
+
+.PushRight {
+  flex: 1;
+}
+
+.Options-Icons-Container {
+  padding-right: 5vw;
+}

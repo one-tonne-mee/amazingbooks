@@ -7,7 +7,7 @@ export function findItemIndexByKey(state, key) {
 export function removeItemByIndex(state, itemIdx) {
   let nextState
   if(itemIdx !== state.length) {
-    nextState = [...state.slice(0,itemIdx),...state.slice(itemIdx+1, state.length)]  
+    nextState = [...state.slice(0,itemIdx),...state.slice(itemIdx+1, state.length)]
   } else {
     nextState = [...state]
     nextState.pop()
@@ -18,6 +18,16 @@ export function removeItemByIndex(state, itemIdx) {
 export function setProperties(state, itemIdx, key, value) {
   let targetItem = state.slice(itemIdx, itemIdx+1)
   targetItem[key] = value
+  return [
+    ...state.slice(0,itemIdx),
+    targetItem,
+    ...state.slice(itemIdx+1, state.length)
+  ]
+}
+
+export function toggleProperties(state, itemIdx, key) {
+  let targetItem = state.slice(itemIdx, itemIdx+1)
+  targetItem[key] = targetItem[key] ? false : true 
   return [
     ...state.slice(0,itemIdx),
     targetItem,

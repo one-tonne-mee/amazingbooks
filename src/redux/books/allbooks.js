@@ -1,4 +1,4 @@
-import { findItemIndexByKey, removeItemByIndex, setProperties } from '../reducerUtil.js'
+import { findItemIndexByKey, removeItemByIndex, toggleProperties } from '../reducerUtil.js'
 
 export default (state = [], action) => {
   let actionableIndex
@@ -10,18 +10,12 @@ export default (state = [], action) => {
     case 'REMOVE':
       actionableIndex = findItemIndexByKey(state, action.value.key)
       return removeItemByIndex(state, actionableIndex)
-    case 'ADD_TO_FAVORITES':
-      actionableIndex = findItemIndexByKey(state, action.value.key)
-      return setProperties(state, actionableIndex, 'isFavorite',true)
-    case 'REMOVE_FROM_FAVORITES':
-      actionableIndex = findItemIndexByKey(state, action.value.key)
-      return setProperties(state, actionableIndex, 'isFavorite', false)
-    case 'ADD_TO_WISHLIST':
-      actionableIndex = findItemIndexByKey(state, action.value.key)
-      return setProperties(state, actionableIndex, 'isWishList', true)
-    case 'REMOVE_FROM_WISHLIST':
-      actionableIndex = findItemIndexByKey(state, action.value.key)
-      return setProperties(state, actionableIndex, 'isWishList', false)
+    case 'TOGGLE_FAVORITES':
+      actionableIndex = findItemIndexByKey(state, action.value)
+      return toggleProperties(state, actionableIndex, 'isFavorite')
+    case 'TOGGLE_WISHLIST':
+      actionableIndex = findItemIndexByKey(state, action.value)
+      return toggleProperties(state, actionableIndex, 'isWishList')
     case 'FLUSH':
       return []
     // other possible cases: flush wishlist, flush favoritelist
