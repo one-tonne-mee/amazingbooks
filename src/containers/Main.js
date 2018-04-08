@@ -42,7 +42,9 @@ class Main extends Component {
         </header>
         <div className="App-wrapper">
           <VerticalSidebar className="Sidebar" />
-          <Books className="Books" viewFilter={this.state.viewFilter} />
+          <div className="Books">
+            <Books viewFilter={this.state.viewFilter} />
+          </div>
         </div>
 
       </div>
