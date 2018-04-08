@@ -11,6 +11,7 @@ const SideBar = ({ books }) => {
       <span className="Category">All Books &nbsp; { books.length }</span>
       <span className="Category">Favorites</span>
       <span className="Category">Wish List</span>
+      <span className="Category Filler"> &nbsp;</span>
     </div>
   )
 }

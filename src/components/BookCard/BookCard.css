@@ -1,8 +1,7 @@
 .flex-item {
-  background: #AAAAAA;
+  background: #EEEEEE;
   padding: 5px;
   margin-top: 10px;
-
   max-width: 250px;
   max-height: 250px;
   color: black;
@@ -10,11 +9,19 @@
   font-size: 0.5em;
   text-align: center;
 }
+
 .Title-Box {
-
+  position: relative;
+  background-color: #EEEEEE;
+  opacity: 0.5;
+  top: 20px;
+  line-height:20px;
+  margin-top: -10px;
+  left: 0;
+  width: 100%
 }
-.Book-Cover {
-  max-width: 80%;
-  max-height: 80%;
 
+.Book-Cover {
+  max-width: 90%;
+  max-height: 90%;
 }

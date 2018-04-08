@@ -7,8 +7,10 @@
   align-items: flex-start;
 }
 .Category {
-  flex: 1;
   padding-top: 5px;
+}
+.Filler {
+  flex: 1
 }
 
 @media screen and (max-width: 48rem) {
@@ -19,5 +21,8 @@
   }
   .Category {
     flex: 1;
+  }
+  .Filler {
+    flex: 0;
   }
 }

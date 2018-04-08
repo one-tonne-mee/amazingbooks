@@ -10,7 +10,7 @@ const BookCard = ({book}) => {
   return (
     <div className="flex-item">
       <div className="Title-Box"> { book.name } </div>
-      <ImageLoader src={book['cover-img']} >
+      <ImageLoader className="Background" src={book['cover-img']} >
         <img className="Book-Cover"/>
         <div> Something went wrong... </div>
         <Preloader />
