@@ -1,0 +1,1 @@
+// use css intelligently to display in both tabular view and detail card view

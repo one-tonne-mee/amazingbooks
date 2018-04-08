@@ -1,0 +1,29 @@
+@media screen and (max-width: 48rem) {
+  .container {
+    display: flex;
+    flex-flow: column;
+  }
+  .container .column {
+    flex: 1;
+  }
+}
+
+.App {
+  .padding-left: 20rem;
+}
+
+
+.App-header {
+  background-color: #222;
+  height: 3rem;
+  padding: 5px 0 10px 10px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
