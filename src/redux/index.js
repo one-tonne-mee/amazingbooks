@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from 'redux'
-import allbooks from './books/allbooks'
+import books from './books/allbooks'
 
 const app = combineReducers({
-  allbooks
+  books
 })
 
 export default createStore(

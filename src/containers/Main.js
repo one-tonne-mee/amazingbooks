@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
+import VerticalSidebar from './VerticalSidebar/VerticalSidebar'
 
-class App extends Component {
+class Main extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          
           <h1 className="App-title">Amazing Books</h1>
         </header>
-        <p className="App-intro">
-          
-        </p>
+        <div className="App-wrapper">
+          <VerticalSidebar className="Sidebar" />
+        </div>
       </div>
     );
   }
 }
 
-export default App
+export default Main

@@ -1,0 +1,12 @@
+.App-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.Sidebar {
+  flex: 1;
+}
+
+.Books {
+  flex: 4;
+}
