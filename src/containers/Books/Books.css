@@ -7,5 +7,5 @@
   display: flex;
   flex-flow: wrap;
   -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }

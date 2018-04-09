@@ -1,11 +1,11 @@
 .flex-item {
   background: #EEEEEE;
   padding: 5px;
-  margin-top: 10px;
-  max-width: 250px;
-  max-height: 250px;
+  margin: 10px 1vw 0 1vw;
+  max-width: 25vw;
+  max-height: 25vw;
   color: black;
-
+  position: relative;
   font-size: 0.5em;
   text-align: center;
 }
@@ -22,6 +22,62 @@
 }
 
 .Book-Cover {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 24vw;
+  max-height: 24vw;
+  object-fit: contain;
+}
+.Faved, .Not-Faved, .Wished, .Not-Wished {
+  object-fit: contain;
+  max-width: 1vw;
+  max-height: 1vw;
+  margin: 0 5px 0 5px;
+}
+
+.Actions-Box {
+  top: -3vh;
+  padding-top: 5px;
+  height: 10vw;
+  opacity: 0.6;
+  background-color: #EEEEEE;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.Spacer {
+  flex:1;
+}
+
+@media screen and (max-width:36rem) {
+  .Title-Box {
+    top: 5vh;
+    font-size: 3vh;
+    max-height: 4vh;
+  }
+  .Book-Cover {
+    width: 95vw;
+    height: 95vw;
+    max-width: 95vw;
+    max-height: 95vw;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  .flex-item {
+    background: #EEEEEE;
+    padding: 0;
+    margin-top: 0;
+    max-width: 100vw;
+    max-height: 100vw;
+    color: black;
+    position: relative;
+    font-size: 0.5em;
+    text-align: center;
+  }
+  .Actions-Box {
+    top: -25vw;
+    height: 10vw;
+    opacity: 0.6;
+    background-color: #EEEEEE;
+    position: relative;
+
+  }
 }

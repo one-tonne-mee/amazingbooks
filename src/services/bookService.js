@@ -5,7 +5,7 @@ function generateBook () {
   book.key = faker.random.uuid()
   book.name = faker.lorem.words()
   book.author = faker.name.firstName() + ' '+ faker.name.lastName()
-  book['cover-img'] = faker.image.imageUrl()
+  book['cover-img'] = 'sample' + (faker.random.number() % 10 ) + '.png'
   book.genre = faker.lorem.slug()
   book.rating = faker.random.number() % 5 + (faker.random.number() % 5)/10
   book.description = faker.lorem.sentences()

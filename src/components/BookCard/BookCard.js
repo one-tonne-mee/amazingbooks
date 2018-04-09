@@ -34,8 +34,24 @@ const BookCard = ({book, toggleFavorite, toggleWishlist}) => {
         <Preloader />
       </ImageLoader>
       <div className="Actions-Box">
-        <a className={book.isFavorite? 'faved' : '' } onClick={toggleFavorite.bind(this,book.key)}> Fave </a>
-        <a className={book.isWishList? 'wished' : '' } onClick={toggleWishlist.bind(this,book.key)}> WishList </a>
+        <span className="Spacer"> &nbsp; </span>
+        <a
+          onClick={toggleWishlist.bind(this,book.key)}
+        >
+          <img
+          src={book.isWishList? 'plus_red.svg' : 'plus_black.svg'}
+          className={book.isWishList? 'Wished': 'Not-Wished'}
+          />
+        </a>
+        <a
+          onClick={toggleFavorite.bind(this,book.key)}
+        >
+          <img
+            src={book.isFavorite? 'heart_filled.svg' : 'heart_empty.svg' }
+            className={book.isFavorite? 'Faved' : 'Not-Faved' }
+          />
+        </a>
+        <span className="Spacer"> &nbsp; </span>
       </div>
     </div>
   )
