@@ -13,11 +13,12 @@
   flex: 1
 }
 
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 36rem) {
   .Vertical {
     display: flex;
     flex-direction: row;
-    margin: 5px;
+    margin: 1vw;
+    width: 91vw;
   }
   .Category {
     flex: 1;

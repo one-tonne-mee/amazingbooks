@@ -13,9 +13,10 @@
   flex-direction: column;
 }
 
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 36rem) {
   .App-wrapper {
     display: flex;
     flex-direction: column;
+    width: 93vw;
   }
 }

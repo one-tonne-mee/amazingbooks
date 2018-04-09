@@ -1,26 +1,15 @@
 .Display-Options {
-  width: 98%;
+  width: 77vw;
   background: #EEEEEE;
   padding: 5px;
   margin-top: 10px;
-  margin-left: 5px;
+  margin-left:1vw;
   color: black;
   font-size: 0.5em;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-@media screen and (max-width: 48rem) {
-  .DisplayOptions {
-    flex-direction: column;
-    width: 90%;
-  }
-  .PushLeft {
-    min-width: 40vw;
-    max-width: 25vw;
-  }
 }
 
 input[type=text], textarea {
@@ -52,4 +41,14 @@ input[type=text]:focus, textarea:focus {
 
 .Options-Icons-Container {
   padding-right: 5vw;
+}
+
+@media screen and (max-width:36rem){
+  .Display-Options {
+    width: 93vw;
+    margin-bottom: 1vh;
+  }
+  .PushLeft {
+    width: 35vw;
+  }
 }
