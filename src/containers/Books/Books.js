@@ -26,20 +26,20 @@ const Books = ({books , viewFilter }) => {
     <div className="flex-container">
       {
         books
-        // .filter( book => {
-        //   let { filterKey, filterValue, filterType } = viewFilter
-        //   switch( filterType ) {
-        //     case 'boolean':
-        //       return filterValue === !!book[filterKey]
-        //     case 'string':
-        //       return book[filterKey].includes(filterValue)
-        //     case 'exists':
-        //       return true // short circuit to cater for all books
-        //     // other possible cases, 'GT', 'LT'
-        //     default:
-        //       return false
-        //   }
-        // })
+        .filter( book => {
+          let { filterKey, filterValue, filterType } = viewFilter
+          switch( filterType ) {
+            case 'boolean':
+              return filterValue === !!book[filterKey]
+            case 'string':
+              return book[filterKey].includes(filterValue)
+            case 'exists':
+              return true // short circuit to cater for all books
+            // other possible cases, 'GT', 'LT'
+            default:
+              return false
+          }
+        })
         .map( book => {
           return (<BookCard key={book.key} book={book}/>)
         })

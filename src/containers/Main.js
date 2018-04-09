@@ -17,6 +17,19 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+const DEFAULT_FILTER = { filterType : 'exists'}
+const FAVE_FILTER = {
+  filterType: 'boolean',
+  filterKey: 'isFavorite', // TODO use a exported const for here and reducer
+  filterValue: true
+}
+const WISH_FILTER = {
+  filterType: 'boolean',
+  filterKey: 'isWishList', // TODO use a exported const for here and reducer
+  filterValue: true
+}
+
+
 class Main extends Component {
   constructor(props) {
     super(props)
@@ -26,8 +39,18 @@ class Main extends Component {
       //   filterKey: 'isFavorite',
       //   filterValue: true
       // }
-      viewFilter: { filterType : 'exist'}
+      viewFilter: DEFAULT_FILTER
     }
+  }
+
+  setFilterToFavorites() {
+    this.setState({ viewFilter: FAVE_FILTER })
+  }
+  setFilterToWishList() {
+    this.setState({ viewFilter: WISH_FILTER })
+  }
+  setFilterToAll() {
+    this.setState({ viewFilter: DEFAULT_FILTER })
   }
 
   async componentDidMount() {
@@ -42,7 +65,12 @@ class Main extends Component {
           <h1 className="App-title">Amazing Books</h1>
         </header>
         <div className="App-wrapper">
-          <VerticalSidebar className="Sidebar" />
+          <VerticalSidebar
+            className="Sidebar"
+            setFilterToWishList={this.setFilterToWishList.bind(this)}
+            setFilterToFavorites={this.setFilterToFavorites.bind(this)}
+            setFilterToAll={this.setFilterToAll.bind(this)}
+          />
           <div className="Main">
             <DisplayOptions />
             <Books className="Books" viewFilter={this.state.viewFilter} />
