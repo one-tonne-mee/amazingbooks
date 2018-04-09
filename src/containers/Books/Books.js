@@ -15,7 +15,10 @@ const mapStateToProps = state => {
 //    "cover-img": "cover.img",
 //    "genre": "mystery",
 //    "rating": 3.5,
-//    "description": ""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do..."
+//    "description": ""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do...",
+//    injected at Global State tree:
+      // isFavorite: (boolean),
+      // isWishList: (boolean),
 // }
 
 const Books = ({books , viewFilter }) => {

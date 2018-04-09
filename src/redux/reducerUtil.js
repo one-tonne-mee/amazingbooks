@@ -16,7 +16,7 @@ export function removeItemByIndex(state, itemIdx) {
 }
 
 export function setProperties(state, itemIdx, key, value) {
-  let targetItem = state.slice(itemIdx, itemIdx+1)
+  let targetItem = state.slice(itemIdx, itemIdx+1)[0]
   targetItem[key] = value
   return [
     ...state.slice(0,itemIdx),
@@ -26,11 +26,13 @@ export function setProperties(state, itemIdx, key, value) {
 }
 
 export function toggleProperties(state, itemIdx, key) {
-  let targetItem = state.slice(itemIdx, itemIdx+1)
-  targetItem[key] = targetItem[key] ? false : true 
+  let targetItem = state.slice(itemIdx, itemIdx+1)[0]
+  let toggledPropValue = targetItem[key] ? false : true
+  let nextTarget = {}
+  nextTarget[key] = toggledPropValue
   return [
     ...state.slice(0,itemIdx),
-    targetItem,
+    Object.assign({}, targetItem, nextTarget),
     ...state.slice(itemIdx+1, state.length)
   ]
 }

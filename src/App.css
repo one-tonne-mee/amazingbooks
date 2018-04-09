@@ -2,6 +2,7 @@
   .container {
     display: flex;
     flex-flow: column;
+    width: 98%
   }
   .container .column {
     flex: 1;
