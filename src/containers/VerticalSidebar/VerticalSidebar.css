@@ -3,14 +3,18 @@
   flex-direction: column;
   margin: 10px 0 0 10px;
   padding: 10px;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   align-items: flex-start;
 }
 .Category {
   padding-top: 5px;
 }
+.Category:hover {
+  color: #5afadd;
+}
+
 .Filler {
-  flex: 1
+  flex: 1;
 }
 
 @media screen and (max-width: 36rem) {
