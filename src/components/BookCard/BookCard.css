@@ -2,7 +2,7 @@
   background: #eeeeee;
   padding: 5px;
   margin: 10px 1vw 0 1vw;
-  max-width: 25vw;
+  max-width: 25%;
   max-height: 25vw;
   color: black;
   position: relative;
@@ -37,14 +37,14 @@
 }
 
 .Actions-Box {
-  bottom: 12vh;
-  padding-top: 5px;
-  height: 3vw;
+  bottom: 4vh;
+  height: 2vw;
   opacity: 0.6;
   background-color: #eeeeee;
   position: relative;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .Spacer {
   flex: 1;
