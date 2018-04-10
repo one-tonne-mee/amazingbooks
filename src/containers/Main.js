@@ -5,7 +5,12 @@ import DisplayOptions from "./DisplayOptions/DisplayOptions";
 import "./Main.css";
 import bookService from "../services/bookService";
 import { connect } from "react-redux";
-import { DEFAULT_FILTER, FAVE_FILTER, WISH_FILTER } from "../utils/constants";
+import {
+  DEFAULT_FILTER,
+  FAVE_FILTER,
+  WISH_FILTER,
+  VIEW_TYPES
+} from "../utils/constants";
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -32,7 +37,8 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewFilter: DEFAULT_FILTER
+      viewFilter: DEFAULT_FILTER,
+      viewType: VIEW_TYPES.GRID
     };
   }
 
@@ -41,6 +47,10 @@ class Main extends Component {
       let viewFilter = createKVFilter(searchString);
       this.setState({ viewFilter });
     }
+  }
+
+  setViewType(viewType) {
+    this.setState({ viewType });
   }
 
   setFilterToFavorites() {
@@ -75,8 +85,13 @@ class Main extends Component {
             <DisplayOptions
               setSearchFilter={this.setSearchFilter.bind(this)}
               viewFilter={this.state.viewFilter}
+              setViewType={this.setViewType.bind(this)}
             />
-            <Books className="Books" viewFilter={this.state.viewFilter} />
+            <Books
+              className="Books"
+              viewFilter={this.state.viewFilter}
+              viewType={this.state.viewType}
+            />
           </div>
         </div>
       </div>

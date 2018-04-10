@@ -1,6 +1,7 @@
 import React from "react";
 import BookCard from "../../components/BookCard/BookCard";
 import { connect } from "react-redux";
+import { VIEW_TYPES } from "../../utils/constants";
 import "./Books.css";
 const mapStateToProps = state => {
   return { books: state.books };
@@ -21,7 +22,7 @@ const mapStateToProps = state => {
 // isWishList: (boolean),
 // }
 
-const Books = ({ books, viewFilter }) => {
+const Books = ({ books, viewFilter, viewType }) => {
   return (
     <div className="flex-container">
       {books
@@ -45,6 +46,9 @@ const Books = ({ books, viewFilter }) => {
           }
         })
         .map(book => {
+          if (viewType === VIEW_TYPES.LIST) {
+            return "HELLO WORLD";
+          }
           return <BookCard key={book.key} book={book} />;
         })}
     </div>

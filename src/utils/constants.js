@@ -9,3 +9,8 @@ export const WISH_FILTER = {
   filterKey: "isWishList",
   filterValue: true
 };
+
+export const VIEW_TYPES = {
+  GRID: "grid",
+  LIST: "list"
+};

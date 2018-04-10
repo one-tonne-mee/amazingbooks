@@ -1,8 +1,8 @@
 import React from "react";
 import "./DisplayOptions.css";
-import { DEFAULT_FILTER } from "../../utils/constants";
+import { DEFAULT_FILTER, VIEW_TYPES } from "../../utils/constants";
 
-const DisplayOptions = ({ setSearchFilter, viewFilter }) => {
+const DisplayOptions = ({ setSearchFilter, viewFilter, setViewType }) => {
   return (
     <div className="Display-Options">
       <input
@@ -21,14 +21,14 @@ const DisplayOptions = ({ setSearchFilter, viewFilter }) => {
       )}
 
       <div className="Options-Icons-Container">
-        <a>
+        <a onClick={() => setViewType(VIEW_TYPES.GRID)}>
           {" "}
-          <img className="Display-Option-Icon" src="Table.svg" />{" "}
+          <img className="Display-Option-Icon" src="Grid.svg" />{" "}
         </a>{" "}
-        <span>
+        <a onClick={() => setViewType(VIEW_TYPES.LIST)}>
           {" "}
           <img className="Display-Option-Icon" src="List.svg" />{" "}
-        </span>
+        </a>
       </div>
     </div>
   );
