@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './ActionRow.css';
 const mapDispatchToProps = dispatch => {
   return {
     toggleFavorite: async function(key, isFave) {

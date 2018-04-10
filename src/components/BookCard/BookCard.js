@@ -8,7 +8,7 @@ function Preloader() {
   return <img src="spinner.gif" />;
 }
 
-const BookCard = ({ book, toggleFavorite, toggleWishlist }) => {
+const BookCard = ({ book }) => {
   return (
     <div className="flex-item">
       <div className="Title-Box"> {book.name} </div>
@@ -17,11 +17,7 @@ const BookCard = ({ book, toggleFavorite, toggleWishlist }) => {
         <div> Something went wrong... </div>
         <Preloader />
       </ImageLoader>
-      <ActionRow
-        book={book}
-        toggleFavorite={toggleFavorite}
-        toggleWishlist={toggleWishlist}
-      />
+      <ActionRow book={book} />
     </div>
   );
 };

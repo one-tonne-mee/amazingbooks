@@ -16,6 +16,27 @@
   font-style: italic;
   font-size: 1.5em;
 }
+
+.Faved,
+.Not-Faved,
+.Wished,
+.Not-Wished {
+  object-fit: contain;
+  max-width: 2vw;
+  max-height: 2vw;
+  margin: 0.5em 0 0 5px;
+}
+.Actions-Box {
+  height: 2vw;
+  opacity: 0.6;
+  background-color: #eeeeee;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: -2.2em;
+}
+
 .Ratings {
   list-style: none;
   padding: 0;
@@ -27,6 +48,7 @@
 .Ratings-item-star {
   fill: gold;
 }
+
 .Genre {
   font-style: italic;
 }
