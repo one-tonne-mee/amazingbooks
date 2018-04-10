@@ -9,7 +9,7 @@ const DisplayOptions = ({ setSearchFilter, viewFilter, setViewType }) => {
         type="text"
         className="PushLeft"
         onChange={event => setSearchFilter(event.target.value)}
-        placeholder="Search using key:values"
+        placeholder="Search using key:values, for example 'author: a...'"
       />
       <div className="PushRight"> &nbsp; </div>
       {viewFilter !== DEFAULT_FILTER && (
