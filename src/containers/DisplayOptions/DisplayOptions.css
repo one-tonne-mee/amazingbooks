@@ -1,29 +1,32 @@
 .Display-Options {
   width: 77vw;
-  background: #EEEEEE;
+  background: #eeeeee;
   padding: 5px;
   margin-top: 10px;
-  margin-left:1vw;
+  margin-left: 1vw;
   color: black;
   font-size: 0.5em;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-content: center;
 }
 
-input[type=text], textarea {
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
+input[type="text"],
+textarea {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   outline: none;
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
 }
 
-input[type=text]:focus, textarea:focus {
+input[type="text"]:focus,
+textarea:focus {
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
@@ -39,11 +42,23 @@ input[type=text]:focus, textarea:focus {
   flex: 1;
 }
 
+.FilterKV {
+  margin: 0 0.5vw 0 0.5vw;
+  display: flex;
+  flex-direction: row;
+}
+.Pills {
+  border: 1px solid rgba(81, 203, 238, 1);
+  border-radius: 2px;
+  padding: 5px;
+  margin: 5px;
+}
+
 .Options-Icons-Container {
   padding-right: 5vw;
 }
 
-@media screen and (max-width:36rem){
+@media screen and (max-width: 36rem) {
   .Display-Options {
     width: 93vw;
     margin-bottom: 1vh;

@@ -5,6 +5,7 @@ import DisplayOptions from "./DisplayOptions/DisplayOptions";
 import "./Main.css";
 import bookService from "../services/bookService";
 import { connect } from "react-redux";
+import { DEFAULT_FILTER, FAVE_FILTER, WISH_FILTER } from "../utils/constants";
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -17,24 +18,12 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const DEFAULT_FILTER = { filterType: "exists" };
-const FAVE_FILTER = {
-  filterType: "boolean",
-  filterKey: "isFavorite", // TODO use a exported const for here and reducer
-  filterValue: true
-};
-const WISH_FILTER = {
-  filterType: "boolean",
-  filterKey: "isWishList", // TODO use a exported const for here and reducer
-  filterValue: true
-};
-
 function createKVFilter(searchString) {
   let [k, v] = searchString.split(":");
   return {
     filterType: "string",
-    filterKey: k,
-    filterValue: v
+    filterKey: k.trim(),
+    filterValue: v.trim()
   };
 }
 // todo : autosuggest keys?
@@ -83,7 +72,10 @@ class Main extends Component {
             setFilterToAll={this.setFilterToAll.bind(this)}
           />
           <div className="Main">
-            <DisplayOptions setSearchFilter={this.setSearchFilter.bind(this)} />
+            <DisplayOptions
+              setSearchFilter={this.setSearchFilter.bind(this)}
+              viewFilter={this.state.viewFilter}
+            />
             <Books className="Books" viewFilter={this.state.viewFilter} />
           </div>
         </div>
