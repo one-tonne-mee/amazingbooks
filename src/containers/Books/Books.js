@@ -33,7 +33,7 @@ const Books = ({ books, viewFilter, viewType }) => {
           }
         })
         .map(book => {
-          if (viewType === VIEW_TYPES.LIST) {
+          if (viewType === VIEW_TYPES.GRID) {
             return <BookListCard key={book.key} book={book} />;
           }
           return <BookCard key={book.key} book={book} />;

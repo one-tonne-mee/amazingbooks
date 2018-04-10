@@ -2,30 +2,30 @@ import React from 'react';
 import Ratings from 'react-ratings';
 import './BookListCard.css';
 import ActionRow from '../ActionRow/ActionRow';
-const BookListCard = ({ book }) => {
+const BookListCard = ({ book, baseClass = 'Book-List' }) => {
   return (
-    <div className="Book-List-Card">
-      <div className="Book-List-Cover">
+    <div className={baseClass + '-Card'}>
+      <div className={baseClass + '-Cover'}>
         <img
           className="Image"
           src={book['cover-img']}
           alt={'Cover for ' + book.name}
         />
       </div>
-      <div className="Book-List-Summary">
-        <div className={'Book-List Title'}>{book.name}</div>
-        <div className={'Book-List Author'}>{book.author}</div>
-        <div className="Book-List ActionRow">
+      <div className={baseClass + '-Summary'}>
+        <div className={baseClass + ' Title'}>{book.name}</div>
+        <div className={baseClass + ' Author'}>{book.author}</div>
+        <div className={baseClass + ' ActionRow'}>
           <ActionRow book={book} />
         </div>
-        <div className={'Book-List Rating'}>
+        <div className={baseClass + ' Rating'}>
           <Ratings defaultRatings={book.rating} totalRating={book.rating} />
         </div>
-        <div className={'Book-List Genre-Row'}>
+        <div className={baseClass + ' Genre-Row'}>
           <span className="Genre"> Genre: </span>
           {book.genre}
         </div>
-        <div className={'Book-List Description'}>{book.description}</div>
+        <div className={baseClass + ' Description'}>{book.description}</div>
       </div>
     </div>
   );

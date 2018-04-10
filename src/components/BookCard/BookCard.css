@@ -38,7 +38,7 @@
 
 .Actions-Box {
   bottom: 4vh;
-  height: 2vw;
+  height: 4vh !important;
   opacity: 0.6;
   background-color: #eeeeee;
   position: relative;

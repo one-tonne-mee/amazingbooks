@@ -12,6 +12,7 @@
 .Title {
   font-size: 2em;
 }
+
 .Author {
   font-style: italic;
   font-size: 1.5em;
@@ -27,7 +28,7 @@
   margin: 0.5em 0 0 5px;
 }
 .Actions-Box {
-  height: 2vw;
+  height: 2.3em;
   opacity: 0.6;
   background-color: #eeeeee;
   position: relative;
