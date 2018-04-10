@@ -16,7 +16,7 @@ function generateBook() {
   book.author = faker.name.findName();
   book['cover-img'] = 'sample' + faker.random.number() % 10 + '.png';
   book.genre = capitalizeFirstLetter(faker.lorem.slug());
-  book.rating = faker.random.number() % 5 + (faker.random.number() % 5) / 10;
+  book.rating = faker.random.number() % 6 + (faker.random.number() % 10) / 10;
   book.description = faker.lorem.paragraphs(3);
   return book;
 }

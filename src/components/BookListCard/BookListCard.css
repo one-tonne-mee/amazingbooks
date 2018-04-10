@@ -46,7 +46,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: -2.2em;
+  margin-top: 15px;
+  margin-bottom: -2em;
 }
 
 .Ratings {
