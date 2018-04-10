@@ -21,7 +21,14 @@ const DisplayOptions = ({ setSearchFilter, viewFilter }) => {
       )}
 
       <div className="Options-Icons-Container">
-        <span> square</span> <span> hambu </span>
+        <a>
+          {" "}
+          <img className="Display-Option-Icon" src="Table.svg" />{" "}
+        </a>{" "}
+        <span>
+          {" "}
+          <img className="Display-Option-Icon" src="List.svg" />{" "}
+        </span>
       </div>
     </div>
   );

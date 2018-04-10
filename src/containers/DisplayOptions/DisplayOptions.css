@@ -57,6 +57,10 @@ textarea:focus {
 .Options-Icons-Container {
   padding-right: 5vw;
 }
+.Display-Option-Icon {
+  max-width: 2vw;
+  margin-left: 10px;
+}
 
 @media screen and (max-width: 36rem) {
   .Display-Options {
