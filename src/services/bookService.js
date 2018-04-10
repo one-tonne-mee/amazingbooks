@@ -8,6 +8,10 @@ function generateBook() {
     ' ' +
     capitalizeFirstLetter(faker.company.bsAdjective()) +
     ' ' +
+    capitalizeFirstLetter(faker.company.bsBuzz()) +
+    ' ' +
+    capitalizeFirstLetter(faker.company.bsAdjective()) +
+    ' ' +
     capitalizeFirstLetter(faker.company.bsBuzz());
   book.author = faker.name.findName();
   book['cover-img'] = 'sample' + faker.random.number() % 10 + '.png';

@@ -14,7 +14,11 @@ const DisplayOptions = ({ setSearchFilter, viewFilter, setViewType }) => {
       <div className="PushRight"> &nbsp; </div>
       {viewFilter !== DEFAULT_FILTER && (
         <div className="FilterKV">
-          <span className="Pills">{viewFilter.filterKey}</span>
+          <span className="Pills">
+            {viewFilter.filterKey.includes('is')
+              ? viewFilter.filterKey.replace('is', '')
+              : viewFilter.filterKey}
+          </span>
           {viewFilter.filterValue.length > 0 && (
             <span className="Pills">{viewFilter.filterValue}</span>
           )}

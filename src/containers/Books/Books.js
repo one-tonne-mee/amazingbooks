@@ -8,7 +8,7 @@ const mapStateToProps = state => {
   return { books: state.books };
 };
 
-const Books = ({ books, viewFilter, viewType }) => {
+const Books = ({ books, viewFilter, viewType, showDetailCard }) => {
   return (
     <div className="flex-container">
       {books
@@ -33,10 +33,16 @@ const Books = ({ books, viewFilter, viewType }) => {
           }
         })
         .map(book => {
-          if (viewType === VIEW_TYPES.GRID) {
+          if (viewType === VIEW_TYPES.LIST) {
             return <BookListCard key={book.key} book={book} />;
           }
-          return <BookCard key={book.key} book={book} />;
+          return (
+            <BookCard
+              key={book.key}
+              book={book}
+              showDetailCard={showDetailCard}
+            />
+          );
         })}
     </div>
   );

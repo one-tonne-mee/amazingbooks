@@ -1,7 +1,7 @@
-import { combineReducers, createStore } from "redux";
-import books from "./books/allbooks";
-import faveCount from "./books/count-fave";
-import wishlistCount from "./books/count-wishlist";
+import { combineReducers, createStore } from 'redux';
+import books from './books/allbooks';
+import faveCount from './books/count-fave';
+import wishlistCount from './books/count-wishlist';
 
 const app = combineReducers({
   books,

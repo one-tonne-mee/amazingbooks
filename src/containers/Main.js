@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import VerticalSidebar from './VerticalSidebar/VerticalSidebar';
 import Books from './Books/Books';
+import BookListCard from '../components/BookListCard/BookListCard';
 import DisplayOptions from './DisplayOptions/DisplayOptions';
 import './Main.css';
 import bookService from '../services/bookService';
@@ -23,6 +24,12 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+const mapStateToProps = state => {
+  return {
+    books: state.books
+  };
+};
+
 function createKVFilter(searchString) {
   let [k, v] = searchString.split(':');
   return {
@@ -38,8 +45,15 @@ class Main extends Component {
     super(props);
     this.state = {
       viewFilter: DEFAULT_FILTER,
-      viewType: VIEW_TYPES.LIST
+      viewType: VIEW_TYPES.GRID,
+      detailBook: null
     };
+  }
+  showDetailCard(book) {
+    this.setState({ detailBookKey: book.key });
+  }
+  onDetailCardBlur() {
+    this.setState({ detailBookKey: null });
   }
 
   setSearchFilter(searchString) {
@@ -48,11 +62,9 @@ class Main extends Component {
       this.setState({ viewFilter });
     }
   }
-
   setViewType(viewType) {
     this.setState({ viewType });
   }
-
   setFilterToFavorites() {
     this.setState({ viewFilter: FAVE_FILTER });
   }
@@ -83,6 +95,22 @@ class Main extends Component {
             viewFilter={this.state.viewFilter}
           />
           <div className="Main">
+            {this.state.detailBookKey && (
+              <div>
+                <div
+                  className="Modal-Backdrop"
+                  onClick={this.onDetailCardBlur.bind(this)}
+                />
+                <div className="Modal-Body">
+                  <BookListCard
+                    book={this.props.books.find(
+                      book => book.key === this.state.detailBookKey
+                    )}
+                    baseClass="Detail"
+                  />
+                </div>
+              </div>
+            )}
             <DisplayOptions
               setSearchFilter={this.setSearchFilter.bind(this)}
               viewFilter={this.state.viewFilter}
@@ -92,6 +120,7 @@ class Main extends Component {
               className="Books"
               viewFilter={this.state.viewFilter}
               viewType={this.state.viewType}
+              showDetailCard={this.showDetailCard.bind(this)}
             />
           </div>
         </div>
@@ -100,4 +129,4 @@ class Main extends Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

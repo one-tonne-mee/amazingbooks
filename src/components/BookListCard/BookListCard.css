@@ -1,9 +1,17 @@
+.Book-List-Card,
+.Detail-Card {
+  margin: 1vw 0 0 1vw;
+  background-color: #eeeeee;
+}
 .Book-List-Card {
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin: 1vw 0 0 1vw;
-  background-color: #eeeeee;
+}
+.Detail-Card {
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
 }
 
 .Book-List {
@@ -26,6 +34,9 @@
   max-width: 2vw;
   max-height: 2vw;
   margin: 0.5em 0 0 5px;
+}
+.Detail .Actions-Box {
+  z-index: 999;
 }
 .Actions-Box {
   height: 2.3em;
@@ -62,6 +73,7 @@
   margin-top: 1vw;
   width: 70%;
 }
+
 .Book-List-Cover {
   object-fit: contain;
   margin-right: 1vw;

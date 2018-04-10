@@ -1,4 +1,3 @@
-
 .App-header {
   background-color: #222;
   height: 3rem;
@@ -6,7 +5,8 @@
   color: white;
 }
 
-.App-header, .App-wrapper {
+.App-header,
+.App-wrapper {
   width: 97vw;
   margin: 0 1vw 0 1vw;
 }
@@ -33,9 +33,25 @@
   flex: 4;
   display: flex;
   flex-direction: column;
-  width:100%;
+  width: 100%;
 }
 
+.Modal-Backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #000;
+  opacity: 0.9;
+}
+.Modal-Body {
+  z-index: 100;
+  position: fixed;
+  top: 20vw;
+  left: 20vh;
+}
 @media screen and (max-width: 36rem) {
   .App-wrapper {
     display: flex;
