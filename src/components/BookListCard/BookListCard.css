@@ -1,0 +1,51 @@
+.Book-List-Card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 1vw 0 0 1vw;
+  background-color: #eeeeee;
+}
+
+.Book-List {
+  line-height: 1.2em;
+}
+.Title {
+  font-size: 2em;
+}
+.Author {
+  font-style: italic;
+  font-size: 1.5em;
+}
+.Ratings {
+  list-style: none;
+  padding: 0;
+}
+.Ratings-item {
+  display: inline;
+  pointer-events: none;
+}
+.Ratings-item-star {
+  fill: gold;
+}
+.Genre {
+  font-style: italic;
+}
+.Description {
+  margin-top: 1em;
+  overflow: auto;
+  padding-bottom: 1vw;
+}
+.Book-List-Summary {
+  margin-top: 1vw;
+  width: 70%;
+}
+.Book-List-Cover {
+  object-fit: contain;
+  margin-right: 1vw;
+}
+
+.Image {
+  margin: 1vw;
+  max-width: 23vw;
+  max-height: 23vw;
+}

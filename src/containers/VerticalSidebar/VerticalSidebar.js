@@ -1,6 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./VerticalSidebar.css";
+import {
+  DEFAULT_FILTER,
+  FAVE_FILTER,
+  WISH_FILTER,
+} from "../../utils/constants";
 
 const mapStateToProps = state => {
   return {
@@ -15,18 +20,24 @@ const SideBar = ({
   wishlistCount,
   setFilterToFavorites,
   setFilterToWishList,
-  setFilterToAll
+  setFilterToAll,
+  viewFilter
 }) => {
   return (
     <div className="Vertical">
       <span className="Category">
-        <a onClick={setFilterToAll}>All Books &nbsp; ({books.length})</a>
+        <a
+          className={viewFilter === DEFAULT_FILTER? 'Active-Link': ''}
+          onClick={setFilterToAll}
+        >
+          All Books &nbsp; ({books.length})
+        </a>
       </span>
       <span className="Category">
-        <a onClick={setFilterToFavorites}> Favorites ({faveCount}) </a>
+        <a className={viewFilter === FAVE_FILTER? 'Active-Link': ''} onClick={setFilterToFavorites}> Favorites ({faveCount}) </a>
       </span>
       <span className="Category">
-        <a onClick={setFilterToWishList}> Wishlist ({wishlistCount})</a>
+        <a className={viewFilter === WISH_FILTER? 'Active-Link': ''} onClick={setFilterToWishList}> Wishlist ({wishlistCount})</a>
       </span>
       <span className="Category Filler"> &nbsp;</span>
     </div>
