@@ -85,3 +85,18 @@
   max-width: 23vw;
   max-height: 23vw;
 }
+
+@media screen AND (max-width: 36rem) {
+  .Actions-Box {
+    height: 5vh;
+    position: inherit;
+    margin: 0;
+    height: 5em;
+  }
+  .Detail-Card {
+    flex-direction: column;
+  }
+  .Image {
+    max-width: 85%;
+  }
+}
