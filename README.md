@@ -28,7 +28,7 @@ You may also wish to run the build, but this is purely a development P.O.C / P.O
      
 ### Visit my artifact
 
-www.blessedipsum.com
+blessedipsum.com
 
 ### Infrastructure Notes
 
