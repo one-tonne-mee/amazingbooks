@@ -25,3 +25,9 @@ export const wordSlice = createSlice({
     },
   },
 });
+
+export const { addWord, ejectWord } = wordSlice.actions;
+
+export const selectWordList = (state: RootState) => state.wordList.words;
+
+export default wordSlice.reducer;
