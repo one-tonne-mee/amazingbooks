@@ -1,20 +1,29 @@
 import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import ListItem from "./ListItem";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [page, setPage] = useState(0);
   const [wordList, setWordList] = useState<string[]>([
-    "lorem",
-    // "ipsum",
-    // "dolor",
-    "avec",
+    // "lorem",
+    // // "ipsum",
+    // // "dolor",
+    // "avec",
   ]);
   const [cycleTime, setCycleTime] = useState<number | null>(null);
   const [wordIndex, setWordIndex] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
+  const [timeOutId, setTimeoutId] = useState();
 
+  const resetAction = () => {
+    setTimeLeft(null);
+    setWordIndex(null);
+    setCycleTime(null);
+    clearTimeout(timeOutId);
+    setTimeoutId(undefined);
+  };
   useEffect(() => {
     if (timeLeft !== null && cycleTime !== null) {
       if (timeLeft === 0) {
@@ -25,12 +34,10 @@ function App() {
         } else {
           console.log("Reset!");
           // reset
-          setTimeLeft(null);
-          setWordIndex(null);
-          setCycleTime(null);
+          resetAction();
         }
       } else {
-        WaitSeconds(1).then(() => {
+        WaitSeconds(1, setTimeoutId).then(() => {
           console.log("still running");
           setTimeLeft(timeLeft - 1);
         });
@@ -38,15 +45,30 @@ function App() {
     }
   }, [timeLeft, cycleTime]);
   return (
-    <div className="App">
+    <div className="App forty centered-col">
       {page === 0 && (
         <>
           {wordList.length ? (
-            <div>
-              {wordList.map((w) => (
-                <div key={w}>{w}</div>
+            <ul className="wordlist">
+              {wordList.map((w, i) => (
+                <ListItem
+                  displayValue={w}
+                  setDisplayValue={(newValue) =>
+                    setWordList([
+                      ...wordList.slice(0, i),
+                      newValue,
+                      ...wordList.slice(i + 1, wordList.length),
+                    ])
+                  }
+                  deleteSelf={() =>
+                    setWordList([
+                      ...wordList.slice(0, i),
+                      ...wordList.slice(i + 1, wordList.length),
+                    ])
+                  }
+                />
               ))}
-            </div>
+            </ul>
           ) : null}
           <div>
             <input
@@ -107,7 +129,21 @@ function App() {
               </button>
             </>
           ) : (
-            <button>
+            <button
+              style={{
+                fontSize: "20vw",
+              }}
+              onClick={() => {
+                if (wordIndex === wordList.length - 1) {
+                  // end, so reset
+                  resetAction();
+                } else {
+                  clearTimeout(timeOutId);
+                  setWordIndex(wordIndex + 1);
+                  setTimeLeft(cycleTime);
+                }
+              }}
+            >
               {wordList[wordIndex as number]} {timeLeft}
             </button>
           )}
@@ -119,6 +155,6 @@ function App() {
 
 export default App;
 
-async function WaitSeconds(t: number) {
-  await new Promise((r) => setTimeout(r, t * 1000));
+async function WaitSeconds(t: number, setTimeoutId: (a: any) => void) {
+  await new Promise((r) => setTimeoutId(setTimeout(r, t * 1000)));
 }
