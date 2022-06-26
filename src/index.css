@@ -72,7 +72,8 @@ div[id="root"] {
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
-  width: 200px;
+  min-width: 80vw;
+  min-height: 80vh;
   margin-bottom: 35px;
   background-color: #608341;
 }
