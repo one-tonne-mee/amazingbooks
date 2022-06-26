@@ -1,38 +1,49 @@
-.App {
+/***** Base Layout Styles *****/
+/* These styles are not needed for the animation to work!! Styles were simply added to this pen for display purposes. */
+h1,
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: pink;
+  background: linear-gradient(-200deg, pink, #bb7c7c, #fb7c7c);
+}
+
+.project-title--container,
+.project-link--container {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.project-title,
+.project-link {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.project-title {
+  font-size: 18px;
+  margin-top: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.project-link,
+.project-link a {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fa {
+  font-size: 22px !important;
+  padding: 0 5px;
+  color: #fff;
 }

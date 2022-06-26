@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import ListItem from "./ListItem";
 
@@ -52,6 +51,7 @@ function App() {
             <ul className="wordlist">
               {wordList.map((w, i) => (
                 <ListItem
+                  key={w}
                   displayValue={w}
                   setDisplayValue={(newValue) =>
                     setWordList([
@@ -70,7 +70,7 @@ function App() {
               ))}
             </ul>
           ) : null}
-          <div>
+          <div className="input">
             <input
               value={inputValue}
               placeholder={"Add a word!"}
@@ -84,6 +84,7 @@ function App() {
               }}
             />
             <button
+              className="cta-btn"
               onClick={() => {
                 setWordList([...wordList, inputValue]);
                 setInputValue("");
@@ -93,9 +94,16 @@ function App() {
               Add
             </button>
           </div>
-          <div>
-            <button onClick={() => setWordList([])}>Clear all</button>
+          <div className="cta">
             <button
+              className="cta-btn"
+              disabled={wordList.length === 0}
+              onClick={() => setWordList([])}
+            >
+              Clear all
+            </button>
+            <button
+              className="cta-btn"
               disabled={wordList.length === 0}
               onClick={() => {
                 setPage(1);
@@ -130,9 +138,7 @@ function App() {
             </>
           ) : (
             <button
-              style={{
-                fontSize: "20vw",
-              }}
+              className={`jitterbug jitterbug-${timeLeft}`}
               onClick={() => {
                 if (wordIndex === wordList.length - 1) {
                   // end, so reset

@@ -22,7 +22,7 @@ div[id="root"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  height: 100vh;
 }
 
 .forty {
@@ -32,7 +32,7 @@ div[id="root"] {
 .centered-col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -41,10 +41,150 @@ div[id="root"] {
   flex-direction: column;
   align-items: flex-end;
   list-style-type: none;
+  margin-bottom: 3vh;
+}
+
+.input {
+  margin-bottom: 3vh;
+}
+
+.cta {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cta-btn {
+  flex: 1;
+  max-width: calc(100% * 0.5 - 2px);
 }
 
 @media screen (max-width 600px) {
   .forty {
     max-width: 80vw;
+  }
+}
+
+/***** Animation CSS Code *****/
+.jitterbug {
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  width: 200px;
+  margin-bottom: 35px;
+  background-color: #608341;
+}
+
+.jitterbug-1 {
+  animation-name: jitter-1;
+  background-color: orange;
+}
+.jitterbug-2 {
+  animation-name: jitter-2;
+  background-color: yellow;
+}
+.jitterbug-3 {
+  background-color: #7f9a65;
+  animation-name: jitter-3;
+}
+
+@keyframes jitter-1 {
+  10% {
+    translate: (-4px, -5px) scale(1.01, 1.01);
+  }
+  20% {
+    transform: translate(4px, 3px) scale(0.99, 0.99);
+  }
+  30% {
+    transform: translate(-6px, -7px) scale(1.01, 1.01);
+  }
+  40% {
+    transform: translate(4px, 5px) scale(1, 1);
+  }
+  50% {
+    transform: translate(-3px, -4px) scale(0.98, 0.98);
+  }
+  60% {
+    transform: translate(2px, 5px) scale(1.02, 1.02);
+  }
+  70% {
+    transform: translate(-4px, -6px) scale(1, 1);
+  }
+  80% {
+    transform: translate(5px, 75px) scale(0.99, 0.99);
+  }
+  90% {
+    transform: translate(-7px, -5px) scale(1.1, 1.1);
+  }
+  100% {
+    transform: translate(5px, 3px) scale(0.95, 0.95);
+  }
+}
+
+@keyframes jitter-2 {
+  10% {
+    transform: translate(-3px, -4px) scale(1.01, 1.01);
+  }
+  20% {
+    transform: translate(4px, 3px) scale(0.99, 0.99);
+  }
+  30% {
+    transform: translate(-5px, -6px) scale(1.01, 1.01);
+  }
+  40% {
+    transform: translate(3px, 4px) scale(1, 1);
+  }
+  50% {
+    transform: translate(-2px, -3px) scale(0.98, 0.98);
+  }
+  60% {
+    transform: translate(1px, 4px) scale(1.02, 1.02);
+  }
+  70% {
+    transform: translate(-3px, -5px) scale(1, 1);
+  }
+  80% {
+    transform: translate(4px, 6px) scale(0.99, 0.99);
+  }
+  90% {
+    transform: translate(-6px, -4px) scale(1.1, 1.1);
+  }
+  100% {
+    transform: translate(4px, 2px) scale(0.95, 0.95);
+  }
+}
+
+@keyframes jitter-3 {
+  10% {
+    transform: translate(-2px, -3px) scale(1.01, 1.01);
+  }
+  20% {
+    transform: translate(3px, 2px) scale(0.99, 0.99);
+  }
+  30% {
+    transform: translate(-4px, -5px) scale(1.01, 1.01);
+  }
+  40% {
+    transform: translate(2px, 3px) scale(1, 1);
+  }
+  50% {
+    transform: translate(-1px, -2px) scale(0.98, 0.98);
+  }
+  60% {
+    transform: translate(0px, 3px) scale(1.02, 1.02);
+  }
+  70% {
+    transform: translate(-2px, -4px) scale(1, 1);
+  }
+  80% {
+    transform: translate(3px, 5px) scale(0.99, 0.99);
+  }
+  90% {
+    transform: translate(-5px, -3px) scale(1.1, 1.1);
+  }
+  100% {
+    transform: translate(3px, 1px) scale(0.95, 0.95);
   }
 }
