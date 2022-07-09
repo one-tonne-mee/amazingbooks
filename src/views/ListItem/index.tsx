@@ -1,5 +1,5 @@
-import React, { ElementType, useState } from "react";
-
+import React, { useState } from "react";
+import "./ListItem.css";
 interface ListItemProps {
   displayValue: string;
   setDisplayValue: (s: string) => void;
@@ -14,6 +14,7 @@ export default function ListItem(props: ListItemProps) {
     <li>
       {editing ? (
         <input
+          className="entryfield one-rem"
           autoFocus
           defaultValue={displayValue}
           onBlur={(e) => {
@@ -22,16 +23,24 @@ export default function ListItem(props: ListItemProps) {
           }}
           onChange={(e) => setCurrentValue(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === "Enter" && currentValue) {
-              setEditing(false);
-              setDisplayValue(currentValue);
+            if (e.key === "Enter") {
+              if (currentValue) {
+                setEditing(false);
+                setDisplayValue(currentValue);
+              } else {
+                deleteSelf();
+              }
             }
           }}
         />
       ) : (
         <>
-          <span onClick={() => setEditing(true)}>{displayValue}</span>{" "}
-          <button onClick={deleteSelf}>X</button>
+          <span className="wordlist-item" onClick={() => setEditing(true)}>
+            {displayValue}
+          </span>{" "}
+          <button className="x-button" onClick={deleteSelf}>
+            X
+          </button>
         </>
       )}
     </li>

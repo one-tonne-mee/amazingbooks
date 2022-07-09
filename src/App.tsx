@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import ListItem from "./ListItem";
+import ListItem from "./views/ListItem";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -70,8 +70,9 @@ function App() {
               ))}
             </ul>
           ) : null}
-          <div className="input">
+          <div className="input-box">
             <input
+              className="entryfield one-rem"
               value={inputValue}
               placeholder={"Add a word!"}
               onChange={(e) => setInputValue(e.target.value)}
@@ -84,7 +85,7 @@ function App() {
               }}
             />
             <button
-              className="cta-btn"
+              className="cta-btn button one-rem"
               onClick={() => {
                 setWordList([...wordList, inputValue]);
                 setInputValue("");
@@ -96,14 +97,14 @@ function App() {
           </div>
           <div className="cta">
             <button
-              className="cta-btn"
+              className="cta-btn button one-rem"
               disabled={wordList.length === 0}
               onClick={() => setWordList([])}
             >
               Clear all
             </button>
             <button
-              className="cta-btn"
+              className="cta-btn button one-rem"
               disabled={wordList.length === 0}
               onClick={() => {
                 setPage(1);
@@ -120,6 +121,7 @@ function App() {
           {wordIndex === null ? (
             <>
               <button
+                className="start-game button secondary"
                 onClick={() => {
                   setPage(0);
                 }}
@@ -127,6 +129,7 @@ function App() {
                 Back
               </button>
               <button
+                className="start-game button"
                 onClick={() => {
                   setWordIndex(0);
                   setCycleTime(5);

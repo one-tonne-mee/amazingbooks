@@ -7,6 +7,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.one-rem {
+  font-size: 1rem;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: white;
+  color: black;
+  font-family: sans-serif;
+
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.button:hover,
+.button:focus {
+  background: black;
+  color: white;
+}
+
+.button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.button:active {
+  transform: scale(0.99);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -44,8 +79,18 @@ div[id="root"] {
   margin-bottom: 3vh;
 }
 
-.input {
+.input-box {
   margin-bottom: 3vh;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.entryfield {
+  margin-right: 0.2vw;
+  border-radius: 2px;
+  border: none;
+  padding: 1vw;
 }
 
 .cta {
@@ -58,12 +103,30 @@ div[id="root"] {
 .cta-btn {
   flex: 1;
   max-width: calc(100% * 0.5 - 2px);
+  border-radius: 2px;
 }
 
-@media screen (max-width 600px) {
+@media screen and (max-width: 600px) {
   .forty {
     max-width: 80vw;
   }
+}
+
+@media screen and (max-width: 300px) {
+  .forty {
+    max-width: 80vw;
+  }
+}
+
+.start-game {
+  font-size: 10vh;
+  width: 40vw;
+  margin: 2vh 0;
+  border-radius: 1vw;
+}
+
+.secondary {
+  opacity: 0.5;
 }
 
 /***** Animation CSS Code *****/
@@ -76,14 +139,18 @@ div[id="root"] {
   min-height: 80vh;
   margin-bottom: 35px;
   background-color: #608341;
+  color: white;
+  font-size: 20vh;
 }
 
 .jitterbug-1 {
   animation-name: jitter-1;
+  color: black;
   background-color: orange;
 }
 .jitterbug-2 {
   animation-name: jitter-2;
+  color: black;
   background-color: yellow;
 }
 .jitterbug-3 {

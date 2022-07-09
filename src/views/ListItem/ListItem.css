@@ -1,0 +1,9 @@
+.wordlist-item {
+  font-size: 1rem;
+}
+
+.x-button {
+  background-color: transparent;
+  border: none;
+  color: darkred;
+}
